@@ -1,0 +1,57 @@
+
+Ubuntu 20.04.6 LTS5.4.0-136-generic
+----------------------------------------------------------------------------
+Machine Name:  	ilab2.cs          IP No:     128.6.4.102 2620:0:d60:ac04::66
+Wed 26 Apr 2023 09:25:26 PM EDT	  Uptime:        	      106 days 08:20
+----------------------------------------------------------------------------
+Processes:     	2247              Local/SSH/X2Go/XRDP/VSCODE:	0/9/0/12/6          
+HostProxy:     	9                 TMUX/SCREEN/JUPYTER:	20/4/4
+Connections:   	199               Load/Total Users:	25/64
+Free Memory:   	31Gi of 1.0Ti     Free Swap:     	990Gi of 990Gi
+----------------------------------------------------------------------------
+CPU Info:      	Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz - 80 cores 
+System CPU:    	2.02%             User CPU:      	4.02%
+CPU Idle:      	93.96%            IO Wait:       	0.00%
+----------------------------------------------------------------------------
+Login as:      	ps1279            No. of Sessions:	0
+Avail.UserDisk:	                  Avail.Freespace:	356.69 GB
+CUDA Driver:   	11.3              CUDA Cores:    	6144
+----------------------------------------------------------------------------
+
+/common/home/ps1279/PycharmProjects/pythonProject/counter/utils/functions.py:19: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  sentiment_data = np.array(sentiment_data)
+/common/home/ps1279/PycharmProjects/pythonProject/counter/utils/functions.py:258: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  return np.array(cleaned_sentiment_data)
+Using CUDA 0
+Namespace(dataset='yelp', sentires_dir='/common/home/ps1279/PycharmProjects/pythonProject/Sentires-Guide/English-Jar/lei/output/reviews.pickle', review_dir='/common/home/ps1279/Downloads/yelp_academic_dataset_review.json', user_thresh=20, feature_thresh=2000, sample_ratio=2, test_length=5, val_length=1, neg_length=100, save_path='./dataset_objs/')
+======================= filtering sentiment data =======================
+original review length:  2043677
+original user length:  2043677
+original item length:  142605
+original feature length:  2483
+valid review length:  0
+valid user:  0
+valid item :  0
+valid feature length:  0
+Traceback (most recent call last):
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/scripts/train_base_yelp.py", line 86, in <module>
+    train_base_recommendation(t_args, p_args)
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/scripts/train_base_yelp.py", line 21, in train_base_recommendation
+    rec_dataset = dataset_init(pre_processing_args)
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/scripts/preprocessing/dataset_init.py", line 6, in dataset_init
+    rec_dataset = yelp_preprocessing(preprocessing_args)
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/scripts/preprocessing/yelp_dataset_preprocessing.py", line 227, in yelp_preprocessing
+    rec_dataset = YelpDataset(pre_processing_args)
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/scripts/preprocessing/yelp_dataset_preprocessing.py", line 41, in __init__
+    self.pre_processing()
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/scripts/preprocessing/yelp_dataset_preprocessing.py", line 67, in pre_processing
+    sentiment_data = sentiment_data_filtering(
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/utils/functions.py", line 73, in sentiment_data_filtering
+    print('user dense is:', len(sentiment_data) / len(user_dict))
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/scripts/generate_exp_yelp.py", line 45, in <module>
+    generate_explanation(exp_args)
+  File "/common/home/ps1279/PycharmProjects/pythonProject/counter/scripts/generate_exp_yelp.py", line 15, in generate_explanation
+    with open(os.path.join(exp_args.data_obj_path, exp_args.dataset + "_dataset_obj.pickle"), 'rb') as inp:
+FileNotFoundError: [Errno 2] No such file or directory: './dataset_objs/yelp_dataset_obj.pickle'

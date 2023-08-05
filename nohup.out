@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "scripts/train_base_amazon.py", line 2, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "scripts/train_base_amazon.py", line 4, in <module>
+    import tqdm
+ModuleNotFoundError: No module named 'tqdm'
+Traceback (most recent call last):
+  File "scripts/train_base_amazon.py", line 8, in <module>
+    from scripts.preprocessing.dataset_init import dataset_init
+ModuleNotFoundError: No module named 'scripts'
